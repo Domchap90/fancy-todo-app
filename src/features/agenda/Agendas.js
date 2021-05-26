@@ -7,9 +7,8 @@ export function Agendas() {
     
     const agendasList = Object.values(agendas).map((a) => {
         console.log(`id  = ${a.id}, agenda = ${a.agenda}`)
-        return <Agenda id={a.id} agenda={a.agenda} />;
+        return <Agenda id={a.id} agenda={a.agenda} completed={a.completed} key={a.id} />;
     });  
-    console.log(`agendasList ${agendasList} is of type ${typeof(agendasList)}`)
 
     return (
         <div className="agendaContainer">{agendasList}</div>
