@@ -12,13 +12,13 @@ const agendasSlice = createSlice({
             };
             return state;
         },
-        // removeAgenda: (state, action) => {
-
-        // }
+        removeAgenda: (state, action) => {
+            delete state.agendas[action.payload];
+        }
     }
 });
 
-export const { addAgenda } = agendasSlice.actions;
+export const { addAgenda, removeAgenda } = agendasSlice.actions;
 export default agendasSlice.reducer;
 
 export const selectAgendas = state => state.agendas.agendas;

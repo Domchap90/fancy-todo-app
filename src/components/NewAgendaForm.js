@@ -12,7 +12,7 @@ export function NewAgendaForm() {
         let errMsg = document.getElementById('err');
         errMsg.innerHTML = "";
         if (task.length > 0) {
-            dispatch(addAgenda({agendaId: uuidv4(), agenda: task }));
+            dispatch(addAgenda({agendaId: uuidv4(), agenda: task}));
             setTask('');
         } else
             errMsg.innerHTML = "Cannot add an empty task to the agenda.";
