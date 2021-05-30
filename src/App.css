@@ -37,3 +37,19 @@
     transform: translateY(0px);
   }
 }
+
+.overlay {
+  position: fixed;
+  width: calc(100% - 200px);
+  height: calc(100% - 200px);
+  border-radius: 25px;
+  top: 100px;
+  left: 100px;
+  background-color: rgba(255,255,255,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+.overlayContent {
+  position: absolute
+}

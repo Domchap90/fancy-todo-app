@@ -5,7 +5,6 @@ export const fetchWeather = createAsyncThunk(
     'weather/fetchWeather',
     async() => {
         const response = await openWeatherMap.getWeather();
-        console.log('weather is ', response)
         return response;
     });
 
