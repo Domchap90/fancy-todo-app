@@ -2,8 +2,9 @@ import { selectAgendas } from './agendasSlice';
 import { useSelector } from 'react-redux';
 import { Agenda } from './Agenda';
 
+
 export function Agendas() {
-    const agendas = useSelector(selectAgendas);
+    const agendas = useSelector(selectAgendas);    
     
     const agendasList = Object.values(agendas).map((a) => {
         console.log(`id  = ${a.id}, agenda = ${a.agenda}`)
@@ -11,7 +12,7 @@ export function Agendas() {
     });  
 
     return (
-        <div className="agendaContainer">{agendasList}</div>
+        <div className="agendaContainer" > {agendasList}</div>
     );
           
 }

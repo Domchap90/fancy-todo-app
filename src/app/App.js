@@ -18,7 +18,7 @@ function App() {
               <NewAgendaForm />
             </Grid>
             <Hidden smDown>
-              <Grid container item md={3} mdUp justify="flex-end" >
+              <Grid container item md={3} justify="flex-end" >
                 <Weather />
               </Grid>
             </Hidden>

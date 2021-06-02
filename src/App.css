@@ -40,11 +40,11 @@
 
 .overlay {
   position: fixed;
-  width: calc(100% - 200px);
-  height: calc(100% - 200px);
+  width: calc(100% - 136px);
+  height: calc(100% - 100px);
   border-radius: 25px;
-  top: 100px;
-  left: 100px;
+  top: 50px;
+  left: 68px;
   background-color: rgba(255,255,255,0.5); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
@@ -52,4 +52,20 @@
 
 .overlayContent {
   position: absolute
+}
+
+.agendaContainer {
+  display: grid;
+}
+
+@media (min-width: 600px) {
+  .agendaContainer {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (min-width: 960px) {
+  .agendaContainer {
+    grid-template-columns: auto auto auto;
+  }
 }
