@@ -3,6 +3,7 @@ import { NewAgendaForm } from '../components/NewAgendaForm';
 import { Agendas } from '../features/agenda/Agendas';
 import { Weather } from '../features/weather/Weather';
 import { Images } from '../features/images/Images';
+import { Quote } from '../features/quotes/Quote';
 
 import '../App.css';
 import { Grid, Hidden } from '@material-ui/core';
@@ -24,8 +25,9 @@ function App() {
             </Hidden>
           </Grid>
           <Agendas />
+          <Quote />
         </div> 
-  
+        
       </header>
     </div>
   );

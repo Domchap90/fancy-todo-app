@@ -5,7 +5,6 @@ export const fetchImage = createAsyncThunk(
     'image/fetchImage',
     async() => {
         const response = await unsplashImageAPI.getImages();
-        console.log('image is ', response)
         return response;
     });
 

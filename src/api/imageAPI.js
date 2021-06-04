@@ -2,9 +2,7 @@ const UNSPLASH_URL = `https://api.unsplash.com/search/photos?query=street-photog
 
 export const getImages = async() => {
     const response = await fetch(UNSPLASH_URL);
-    console.log('Image Response = ', response)
     const json = await response.json();
-    console.log('json = ', json.results);
 
     return json.results;
 }
