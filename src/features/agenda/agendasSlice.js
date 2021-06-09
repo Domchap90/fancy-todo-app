@@ -22,7 +22,7 @@ const agendasSlice = createSlice({
             for (let a of state.agendas) {
                 if (a.id === action.payload) {
                     let ind =state.agendas.indexOf(a);
-                    state.agendas.splice(ind, ind + 1);
+                    state.agendas.splice(ind, 1);
                 }
             }
             

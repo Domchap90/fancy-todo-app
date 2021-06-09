@@ -11,7 +11,17 @@ export function Agendas() {
     const [activePage, setActivePage] = useState(0);
     console.log('active page = ', activePage)
 
-    const perPage = 3;
+    const getPerPage = () => {
+        const windowWidth = window.innerWidth;
+        if(windowWidth > 960) {
+            return 9;
+        } else if (windowWidth > 600) {
+            return 6;
+        } else {
+            return 3;
+        }
+    }
+    const [perPage, setPerPage] = useState(getPerPage());
 
     const changeOffset = (currentPage, itemsPerPage) => currentPage * itemsPerPage;
     let offset = 0;
@@ -29,6 +39,13 @@ export function Agendas() {
          
     };
 
+    const handlePageResize = () => {
+        console.log('handleResize entered!!!!')
+        const itemsPerPage = getPerPage();
+        
+        setPerPage(itemsPerPage);
+    };
+
     const updateAgendas = (startIndex) => {
         console.log(`updateAgendas entered with start index ${startIndex} & active page ${activePage}`)
         currentAgendas = agendas.slice(startIndex, startIndex + perPage);
@@ -38,14 +55,27 @@ export function Agendas() {
         }));
         
     }
+
+    useEffect(() => {
+        console.log('useEffect for mount entered.')
+        window.addEventListener('resize', handlePageResize);
+
+        return () => window.removeEventListener('resize', handlePageResize);
+
+    }, []);
+
     useEffect(() => {
 
-        console.log('useEffect entered.')
+        console.log('useEffect for updates entered.')
         setPageCount(Math.ceil(agendas.length/perPage));
         offset = changeOffset(activePage, perPage);
-        updateAgendas(offset);   
+        updateAgendas(offset);  
+        
+        // window.addEventListener('resize', handlePageResize);
 
-    }, [agendas]);
+        // return () => window.removeEventListener('resize', handlePageResize);
+
+    }, [agendas, perPage]);
 
     return (
         <div>

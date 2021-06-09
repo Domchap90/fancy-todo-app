@@ -126,3 +126,7 @@
 .selected {
   text-decoration: underline;
 }
+
+.disabled a {
+  color: grey;
+}
