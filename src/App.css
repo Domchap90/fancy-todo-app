@@ -54,18 +54,25 @@
   position: absolute;
 }
 
-.agendaContainer {
+/********************************** newAgendaForm */
+
+#err {
+  color: red;
+  font-size: small;
+}
+
+#agendaContainer {
   display: grid;
 }
 
 @media (min-width: 600px) {
-  .agendaContainer {
+  #agendaContainer {
     grid-template-columns: auto auto;
   }
 }
 
 @media (min-width: 960px) {
-  .agendaContainer {
+  #agendaContainer {
     grid-template-columns: auto auto auto;
   }
 }
@@ -96,4 +103,26 @@
 #author {
   font-style: italic;
   float: right;
+}
+
+/********************************* Pagination */
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  width: 30%;
+  justify-content: center;
+}
+
+.pagination li {
+  margin: 0px 5px;
+}
+
+.selected {
+  text-decoration: underline;
 }
