@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { removeAgenda, toggleCompleteAgenda } from './agendasSlice';
 import { useEffect } from 'react';
+import Button from '@material-ui/core/Button';
 
 export function Agenda(props) {
     const dispatch = useDispatch();
@@ -22,8 +23,10 @@ export function Agenda(props) {
 
     return(
         <div className="agendaBox" >
-            <button onClick={handleDoneClick} >Done</button>
-            <button onClick={handleCloseClick} >x</button>
+            <div class="btnContainer" >
+                <Button variant="contained" onClick={handleDoneClick} color="primary" className="agendaButton doneBtn" >Done</Button>
+                <Button variant="contained" onClick={handleCloseClick} color="secondary" className="agendaButton closeBtn" >x</Button>
+            </div>
             <p key={id} id={id} >{agenda}</p>
         </div>
     );

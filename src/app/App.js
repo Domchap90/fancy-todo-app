@@ -1,4 +1,6 @@
 import React from 'react';
+import { ThemeProvider } from "@material-ui/styles";
+import { theme } from '../theme';
 import { NewAgendaForm } from '../components/NewAgendaForm';
 import { Agendas } from '../features/agenda/Agendas';
 import { Weather } from '../features/weather/Weather';
@@ -10,6 +12,7 @@ import { Grid, Hidden } from '@material-ui/core';
 
 function App() {
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
       <header className="App-header">
         <Images />
@@ -30,6 +33,7 @@ function App() {
         
       </header>
     </div>
+    </ThemeProvider>
   );
 }
 

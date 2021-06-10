@@ -77,6 +77,37 @@
   }
 }
 
+/******************************************** AgendaBox */
+
+.agendaButton {
+  visibility: hidden;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 10px;
+}
+
+.doneBtn {
+  color: #000;
+}
+
+.closeBtn {
+  background-color: darkred;
+}
+
+.agendaBox:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.agendaBox:hover .agendaButton {
+  visibility: visible;
+}
+
+
+/******************************************** Quotes */
+
 #quoteArea {
   background-color: #fff;
   position: absolute;
